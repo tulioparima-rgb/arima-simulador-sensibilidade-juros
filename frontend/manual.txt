@@ -1,0 +1,25 @@
+### Como usar
+
+Simulador Atuarial - Sensibilidade dos Juros. ARIMA Consultoria Atuarial.
+
+Informe a taxa de juros anual de cada plano, com até duas casas decimais, e confirme com Enter ou saia do campo. São aceitas taxas de 0,00% a 20,00%, em passos de 0,01 ponto percentual. A faixa é um limite técnico, não uma recomendação atuarial.
+
+As taxas dos planos Previdenciário e Financeiro são independentes. Os resultados são recalculados pelo motor atuarial; não são interpolados de cenários prontos.
+
+Restaurar padrão repõe 4,91% no Previdenciário e 5,42% no Financeiro.
+
+A diferença é o valor simulado menos o valor-base. O percentual utiliza o módulo do valor-base. Se a base for zero, o percentual é não aplicável.
+
+No Financeiro, a rubrica de exclusão é recalculada em cada cenário antes do resultado ajustado. Os ativos garantidores entram uma única vez.
+
+Referência: bases fornecidas do DRAA 2026, sem auditoria documental independente. A simulação não substitui avaliação atuarial formal.
+
+### Leitura da tabela executiva
+
+Cada plano compara Indicador, DRAA 2026 (base fixa), Simulado e Variação. A última coluna apresenta reais e percentual. A linha Resultado atuarial identifica déficit, superávit ou equilíbrio, preservando o sinal dos valores. Números vermelhos são negativos.
+
+Previdenciário: Ativos garantidores (BO5), Ativo atuarial (AR157), Passivo atuarial (BJ157) e Resultado (BO5 + AR157 − BJ157).
+
+Financeiro: Ativos garantidores (BO5), Ativo atuarial bruto (AR157), Exclusão atuarial (AQ157), Ativo atuarial ajustado (AR157 − AQ157), Passivo atuarial (BJ157) e Resultado (BO5 + AR157 − AQ157 − BJ157). A exclusão mostra o valor da rubrica, sem inversão de sinal decorativa.
+
+O botão Restaurar padrão fica abaixo dos dois painéis. Em telas menores, os planos são empilhados e a tabela pode ser rolada horizontalmente para preservar a leitura dos números completos.

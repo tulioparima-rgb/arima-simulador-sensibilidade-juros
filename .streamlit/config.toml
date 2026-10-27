@@ -1,0 +1,21 @@
+[server]
+headless = true
+fileWatcherType = "none"
+enableCORS = true
+enableXsrfProtection = true
+enableStaticServing = false
+
+[browser]
+gatherUsageStats = false
+
+[theme]
+base = "light"
+primaryColor = "#166044"
+backgroundColor = "#f4f5f1"
+secondaryBackgroundColor = "#ffffff"
+textColor = "#163d32"
+font = "sans serif"
+
+[client]
+toolbarMode = "minimal"
+showErrorDetails = "none"
