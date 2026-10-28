@@ -1,4 +1,6 @@
-### Como usar
+**Orientações metodológicas e de utilização**
+
+## Visão geral
 
 Simulador Atuarial - Sensibilidade dos Juros. ARIMA Consultoria Atuarial.
 
@@ -14,7 +16,7 @@ No Financeiro, a rubrica de exclusão é recalculada em cada cenário antes do r
 
 Referência: bases fornecidas do DRAA 2026, sem auditoria documental independente. A simulação não substitui avaliação atuarial formal.
 
-### Leitura da tabela executiva
+## Leitura da tabela executiva
 
 Cada plano compara Indicador, DRAA 2026 (base fixa), Simulado e Variação. A última coluna apresenta reais e percentual. A linha Resultado atuarial identifica déficit, superávit ou equilíbrio, preservando o sinal dos valores. Números vermelhos são negativos.
 
@@ -23,3 +25,18 @@ Previdenciário: Ativos garantidores (BO5), Ativo atuarial (AR157), Passivo atua
 Financeiro: Ativos garantidores (BO5), Ativo atuarial bruto (AR157), Exclusão atuarial (AQ157), Ativo atuarial ajustado (AR157 − AQ157), Passivo atuarial (BJ157) e Resultado (BO5 + AR157 − AQ157 − BJ157). A exclusão mostra o valor da rubrica, sem inversão de sinal decorativa.
 
 O botão Restaurar padrão fica abaixo dos dois painéis. Em telas menores, os planos são empilhados e a tabela pode ser rolada horizontalmente para preservar a leitura dos números completos.
+
+## Fluxo recomendado
+
+1. Confira a taxa padrão DRAA 2026 exibida em cada plano.
+2. Informe uma taxa independente em cada campo e confirme com Enter ou saia do campo.
+3. Compare DRAA 2026, Simulado e Variação.
+4. Use Restaurar padrão para retornar aos valores de referência.
+
+## Convenções de apresentação
+
+Valores monetários são exibidos em reais com duas casas decimais. A variação preserva o sinal de simulado menos base; percentuais usam o módulo da base. A linha Resultado atuarial identifica déficit, superávit ou equilíbrio.
+
+## Limites e responsabilidade
+
+A faixa de 0,00% a 20,00% a.a. é um limite técnico de entrada, não uma recomendação atuarial. As bases são fornecidas do DRAA 2026 e a simulação não substitui avaliação atuarial formal.

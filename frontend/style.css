@@ -1,34 +1,34 @@
 :root { color-scheme: light; --green: #084d40; --gold: #b58d43; --ink: #152630; }
 .stApp { background: #f8f9f7; color: var(--ink); font-family: 'Segoe UI', Arial, sans-serif; }
 [data-testid="stHeader"] { background: transparent; height: 0; }
-[data-testid="stMainBlockContainer"] { padding: 1rem 1.1rem 1rem; max-width: 1900px; }
-[data-testid="stVerticalBlock"] { gap: .65rem; }
-.brand { display: flex; align-items: center; gap: 30px; min-height: 90px; color: #063f36; }
+[data-testid="stMainBlockContainer"] { padding: .45rem .85rem .55rem; max-width: 1900px; }
+[data-testid="stVerticalBlock"] { gap: .38rem; }
+.brand { display: flex; align-items: center; gap: 22px; min-height: 66px; color: #063f36; }
 .brand-lockup { display: flex; align-items: center; gap: 14px; flex-shrink: 0; }
-.institutional-logo { width: 98px; height: 98px; object-fit: contain; border-radius: 10px; }
+.institutional-logo { width: 70px; height: 70px; object-fit: contain; border-radius: 9px; }
 .brand > .brand-lockup { flex-direction: column; gap: 4px; }
 .brand > .brand-lockup .brand-description { border: 0; padding: 0; text-align: center; font-size: 12px; line-height: 1.15; letter-spacing: .08em; }
 .executive-footer .institutional-logo { width: 62px; height: 62px; }
-.wordmark { font-family: Georgia, serif; font-size: 48px; font-weight: bold; letter-spacing: -.04em; }
+.wordmark { font-family: Georgia, serif; font-size: 35px; font-weight: bold; letter-spacing: -.04em; }
 .brand-description { border-left: 1px solid #d7c79f; padding-left: 14px; font-size: 13px; letter-spacing: .17em; color: #47616a; line-height: 1.5; }
 .brand-title { border-left: 2px solid var(--gold); padding-left: 30px; flex: 1; text-align: center; }
-.brand h1 { font-family: Georgia, serif; font-size: clamp(27px, 2.65vw, 43px); font-weight: bold; color: #063f36; padding: 0; line-height: 1.2; }
-.brand-title p { margin: 3px 0 0; font-size: clamp(16px, 1.4vw, 23px); }
+.brand h1 { font-family: Georgia, serif; font-size: clamp(23px, 2.25vw, 34px); font-weight: bold; color: #063f36; padding: 0; line-height: 1.08; }
+.brand-title p { margin: 2px 0 0; font-size: clamp(13px, 1.1vw, 18px); }
 .brand-values { font-size: 11px; letter-spacing: .2em; line-height: 1.9; padding: 0 10px; }
 .brand-values::after { content: ''; display: block; width: 45px; border-bottom: 2px solid var(--gold); margin-top: 8px; }
 .st-key-panel_previdenciario, .st-key-panel_financeiro { background: #fff; border: 1px solid #e3e9e5; border-radius: 13px; padding: 0 14px 14px; overflow: hidden; }
-.plan-heading { display: flex; align-items: center; gap: 22px; background: linear-gradient(110deg,#064b3e,#195948); color: white; padding: 21px 24px; margin: 0 -14px 4px; min-height: 100px; }
-.plan-heading svg { width: 53px; height: 53px; fill: #efd079; flex-shrink: 0; }
-.plan-heading h2 { font: bold clamp(25px, 2.65vw, 42px)/1.1 Georgia, serif; color: white; padding: 0; margin: 0; }
+.plan-heading { display: flex; align-items: center; gap: 16px; background: linear-gradient(110deg,#064b3e,#195948); color: white; padding: 12px 18px; margin: 0 -14px 3px; min-height: 69px; }
+.plan-heading svg { width: 42px; height: 42px; fill: #efd079; flex-shrink: 0; }
+.plan-heading h2 { font: bold clamp(22px, 2.25vw, 34px)/1.04 Georgia, serif; color: white; padding: 0; margin: 0; }
 .plan-heading p { font-size: 12px; letter-spacing: .17em; margin: 5px 0 0; }
-[data-testid="stTextInput"] { background: #f2f4f1; border-radius: 7px; padding: 8px 12px; }
+[data-testid="stTextInput"] { background: #f2f4f1; border-radius: 7px; padding: 4px 9px; }
 [data-testid="stTextInput"] label { color: var(--ink); font-size: 14px; font-weight: 600; }
-[data-testid="stTextInput"] input { background: white; color: var(--ink); font-size: 21px; font-variant-numeric: tabular-nums; }
-.reference-rate { background: #eef1ed; border-radius: 7px; text-align: center; padding: 22px 7px; color: #50616a; font-size: 13px; }
-.reference-rate strong { display: block; color: #12313a; font-size: 21px; margin-top: 2px; }
+[data-testid="stTextInput"] input { background: white; color: var(--ink); font-size: 17px; font-variant-numeric: tabular-nums; }
+.reference-rate { background: #eef1ed; border-radius: 7px; text-align: center; padding: 13px 7px; color: #50616a; font-size: 12px; }
+.reference-rate strong { display: block; color: #12313a; font-size: 18px; margin-top: 1px; }
 .comparison-wrap { width: 100%; overflow-x: auto; padding-top: 6px; }
-.comparison { width: 100%; border-collapse: separate; border-spacing: 0 8px; table-layout: fixed; font-size: clamp(13px, .98vw, 16px); font-variant-numeric: tabular-nums; }
-.comparison th, .comparison td { border: 0; padding: 13px 10px; vertical-align: middle; }
+.comparison { width: 100%; border-collapse: separate; border-spacing: 0 4px; table-layout: fixed; font-size: clamp(12px, .82vw, 14px); font-variant-numeric: tabular-nums; }
+.comparison th, .comparison td { border: 0; padding: 8px 8px; vertical-align: middle; }
 .comparison thead th { background: #f1f3f0; text-align: center; font-weight: 650; border-radius: 5px; }
 .comparison thead th:first-child { width: 24%; text-align: left; background: transparent; color: #50616a; }
 .comparison thead th:last-child { width: 23%; }
@@ -44,24 +44,34 @@
 .comparison .result-meaning:empty { display: none; }
 .comparison.previdenciario tbody tr { height: 91px; }
 .comparison.financeiro tbody tr { height: 58px; }
-[data-testid="stMarkdownContainer"] table.comparison { border-collapse: separate; border-spacing: 0 8px; font-size: clamp(14px, 1.04vw, 17px); }
+[data-testid="stMarkdownContainer"] table.comparison { border-collapse: separate; border-spacing: 0 4px; font-size: clamp(12px, .86vw, 14px); }
 [data-testid="stMarkdownContainer"] table.comparison th,
-[data-testid="stMarkdownContainer"] table.comparison td { border: 0; padding: 10px 9px; line-height: 1.25; }
-[data-testid="stMarkdownContainer"] .comparison.previdenciario tbody tr { height: 96px; }
-[data-testid="stMarkdownContainer"] .comparison.financeiro tbody tr { height: 61px; }
+[data-testid="stMarkdownContainer"] table.comparison td { border: 0; padding: 7px 8px; line-height: 1.15; }
+[data-testid="stMarkdownContainer"] .comparison.previdenciario tbody tr { height: 62px; }
+[data-testid="stMarkdownContainer"] .comparison.financeiro tbody tr { height: 45px; }
 [data-testid="stMarkdownContainer"] .comparison .result-row th,
 [data-testid="stMarkdownContainer"] .comparison .result-row td { border-top: 1px solid #f4d1ca; border-bottom: 1px solid #f4d1ca; }
-.st-key-reset_area { padding: 15px 0 18px; }
+.st-key-reset_area { padding: 7px 0 8px; }
 .st-key-reset_area [data-testid="stButton"] button { background: var(--gold); color: white; border: 1px solid var(--gold); border-radius: 12px; min-height: 49px; font-weight: 600; }
 .st-key-reset_area [data-testid="stButton"] button:hover { background: #997432; color: white; border-color: #997432; }
 .reset-note { border-left: 1px solid var(--gold); padding-left: 24px; font-size: 13px; color: #56636c; margin: 0; }
-.executive-footer { display: flex; gap: 27px; align-items: center; border-top: 1px solid #dce1dd; padding: 18px 22px 7px; font-size: 14px; }
+.executive-footer { display: flex; gap: 20px; align-items: center; border-top: 1px solid #dce1dd; padding: 9px 16px 3px; font-size: 12px; }
 .executive-footer .wordmark { font-size: 35px; }
 .executive-footer .brand-description { font-size: 10px; }
 .executive-footer small { display: block; color: #5c6870; margin-top: 4px; }
 .executive-footer p { margin: 0 0 0 auto; font-size: 13px; color: #5c6870; }
 .scope-note { font-size: 11px; color: #67716c; padding: 0 22px; margin: 5px 0; }
 [data-testid="stPopover"] button { border-color: #d8dece; color: #3d594f; font-size: 12px; min-height: 28px; }
+.manual-dialog-header { display: flex; align-items: center; justify-content: space-between; gap: 16px; border-bottom: 1px solid #d9dfd7; padding: 0 0 10px; color: var(--green); }
+.manual-dialog-header .institutional-logo { width: 48px; height: 48px; }
+.manual-dialog-header .brand-description { font-size: 9px; line-height: 1.15; }
+.manual-dialog-header > span { color: #64716d; font-size: 12px; letter-spacing: .04em; text-align: right; }
+div[role="dialog"] { border-top: 5px solid var(--gold); max-height: calc(100vh - 96px); overflow-y: auto; }
+section[role="dialog"] { border-top: 5px solid var(--gold); max-height: calc(100vh - 96px); overflow-y: auto; }
+div[role="dialog"] [data-testid="stMarkdownContainer"] h2 { color: var(--green); font-family: Georgia, serif; font-size: 22px; margin: .35rem 0 .2rem; }
+div[role="dialog"] [data-testid="stMarkdownContainer"] h3 { color: #315d52; font-size: 15px; margin: .65rem 0 .1rem; }
+div[role="dialog"] [data-testid="stMarkdownContainer"] p, div[role="dialog"] [data-testid="stMarkdownContainer"] li { font-size: 13px; line-height: 1.35; }
+div[role="dialog"] [data-testid="stMarkdownContainer"] ul { margin-top: .15rem; }
 button:focus-visible, .comparison-wrap:focus-visible { outline: 3px solid var(--gold); outline-offset: 2px; }
 @media (max-width: 1100px) {
   .brand { gap: 16px; }
@@ -73,7 +83,7 @@ button:focus-visible, .comparison-wrap:focus-visible { outline: 3px solid var(--
   .plan-heading { padding: 18px 13px; gap: 14px; }
 }
 @media (max-width: 850px) {
-  [data-testid="stMainBlockContainer"] { padding: .75rem; }
+  [data-testid="stMainBlockContainer"] { padding: .5rem; }
   [data-testid="stHorizontalBlock"] { flex-wrap: wrap; }
   [data-testid="stColumn"] { min-width: 100%; }
   .brand { display: block; padding: 6px 0; }

@@ -31,6 +31,15 @@ def reset_rates():
     st.session_state['rate_financeiro'] = '5,42'
 
 
+@st.dialog('Manual técnico ARIMA', width='large')
+def show_manual():
+    st.markdown(f'<div class="manual-dialog-header">{brand_lockup}<span>Manual técnico · DRAA 2026</span></div>', unsafe_allow_html=True)
+    st.markdown((ROOT / 'frontend/manual.txt').read_text(encoding='utf8'))
+    if st.button('Fechar manual', key='close_manual', width='stretch'):
+        st.rerun()
+    st.caption('ARIMA Consultoria Atuarial · Simulação de sensibilidade dos juros')
+
+
 @st.fragment
 def panel(plan, key):
     regime = 'REGIME DE CAPITALIZAÇÃO' if plan == 'Previdenciário' else 'REGIME DE REPARTIÇÃO SIMPLES'
@@ -73,8 +82,8 @@ st.markdown('<header class="brand">'
             '<div class="brand-values">PLANEJAMENTO<br>SEGURANÇA<br>RESULTADOS</div></header>', unsafe_allow_html=True)
 _, help_column = st.columns([7, 1])
 with help_column:
-    with st.popover('Manual da tela', width='stretch'):
-        st.markdown((ROOT / 'frontend/manual.txt').read_text(encoding='utf8'))
+    if st.button('Manual técnico', key='open_manual', width='stretch'):
+        show_manual()
 
 left, right = st.columns(2, gap='small')
 with left:
