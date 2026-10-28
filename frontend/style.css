@@ -16,8 +16,10 @@
 .brand-title p { margin: 2px 0 0; font-size: clamp(13px, 1.1vw, 18px); }
 .brand-values { font-size: 11px; letter-spacing: .2em; line-height: 1.9; padding: 0 10px; }
 .brand-values::after { content: ''; display: block; width: 45px; border-bottom: 2px solid var(--gold); margin-top: 8px; }
-.st-key-panel_previdenciario, .st-key-panel_financeiro { background: #fff; border: 1px solid #e3e9e5; border-radius: 13px; padding: 0 14px 14px; overflow: hidden; }
-.plan-heading { display: flex; align-items: center; gap: 16px; background: linear-gradient(110deg,#064b3e,#195948); color: white; padding: 12px 18px; margin: 0 -14px 3px; min-height: 69px; }
+.st-key-panel_previdenciario, .st-key-panel_financeiro { background: #fff; border: 1px solid #e3e9e5; border-radius: 13px; padding: 0; overflow: visible; }
+.plan-heading { display: flex; align-items: center; gap: 16px; background: linear-gradient(110deg,#064b3e,#195948); color: white; padding: 12px 18px; margin: 0; min-height: 69px; border-radius: 12px 12px 0 0; box-sizing: border-box; }
+.st-key-panel_previdenciario [data-testid="stMarkdownContainer"]:has(> .plan-heading),
+.st-key-panel_financeiro [data-testid="stMarkdownContainer"]:has(> .plan-heading) { margin: 0; }
 .plan-heading svg { width: 42px; height: 42px; fill: #efd079; flex-shrink: 0; }
 .plan-heading h2 { font: bold clamp(22px, 2.25vw, 34px)/1.04 Georgia, serif; color: white; padding: 0; margin: 0; }
 .plan-heading p { font-size: 12px; letter-spacing: .17em; margin: 5px 0 0; }
@@ -26,7 +28,7 @@
 [data-testid="stTextInput"] input { background: white; color: var(--ink); font-size: 17px; font-variant-numeric: tabular-nums; }
 .reference-rate { background: #eef1ed; border-radius: 7px; text-align: center; padding: 13px 7px; color: #50616a; font-size: 12px; }
 .reference-rate strong { display: block; color: #12313a; font-size: 18px; margin-top: 1px; }
-.comparison-wrap { width: 100%; overflow-x: auto; padding-top: 6px; }
+.comparison-wrap { width: calc(100% - 20px); margin: 0 10px 8px; overflow-x: auto; overflow-y: visible; padding-top: 6px; }
 .comparison { width: 100%; border-collapse: separate; border-spacing: 0 4px; table-layout: fixed; font-size: clamp(12px, .82vw, 14px); font-variant-numeric: tabular-nums; }
 .comparison th, .comparison td { border: 0; padding: 8px 8px; vertical-align: middle; }
 .comparison thead th { background: #f1f3f0; text-align: center; font-weight: 650; border-radius: 5px; }
@@ -42,13 +44,13 @@
 .comparison .result-row th { color: #a32025; border-left: 1px solid #f4d1ca; }
 .comparison .result-row td:last-child { border-right: 1px solid #f4d1ca; color: var(--ink); }
 .comparison .result-meaning:empty { display: none; }
-.comparison.previdenciario tbody tr { height: 91px; }
-.comparison.financeiro tbody tr { height: 58px; }
+.comparison.previdenciario tbody tr { height: 52px; }
+.comparison.financeiro tbody tr { height: 52px; }
 [data-testid="stMarkdownContainer"] table.comparison { border-collapse: separate; border-spacing: 0 4px; font-size: clamp(12px, .86vw, 14px); }
 [data-testid="stMarkdownContainer"] table.comparison th,
 [data-testid="stMarkdownContainer"] table.comparison td { border: 0; padding: 7px 8px; line-height: 1.15; }
-[data-testid="stMarkdownContainer"] .comparison.previdenciario tbody tr { height: 62px; }
-[data-testid="stMarkdownContainer"] .comparison.financeiro tbody tr { height: 45px; }
+[data-testid="stMarkdownContainer"] .comparison.previdenciario tbody tr { height: 52px; }
+[data-testid="stMarkdownContainer"] .comparison.financeiro tbody tr { height: 52px; }
 [data-testid="stMarkdownContainer"] .comparison .result-row th,
 [data-testid="stMarkdownContainer"] .comparison .result-row td { border-top: 1px solid #f4d1ca; border-bottom: 1px solid #f4d1ca; }
 .st-key-reset_area { padding: 7px 0 8px; }
@@ -73,6 +75,21 @@ div[role="dialog"] [data-testid="stMarkdownContainer"] h3 { color: #315d52; font
 div[role="dialog"] [data-testid="stMarkdownContainer"] p, div[role="dialog"] [data-testid="stMarkdownContainer"] li { font-size: 13px; line-height: 1.35; }
 div[role="dialog"] [data-testid="stMarkdownContainer"] ul { margin-top: .15rem; }
 button:focus-visible, .comparison-wrap:focus-visible { outline: 3px solid var(--gold); outline-offset: 2px; }
+.indicator-label-line { display: flex; align-items: center; gap: 5px; }
+.adjusted-help { display: inline-block; flex: 0 0 auto; position: relative; }
+.adjusted-help summary { display: grid; place-items: center; width: 19px; height: 19px; border: 1px solid #71857c; border-radius: 50%; color: #315d52; background: #fff; cursor: pointer; font-size: 12px; font-weight: 700; line-height: 1; list-style: none; }
+.adjusted-help summary::-webkit-details-marker { display: none; }
+.adjusted-help summary:focus-visible { outline: 3px solid var(--gold); outline-offset: 2px; }
+.adjusted-help-card { width: clamp(245px, 38vw, 460px); margin-top: 7px; padding: 11px; border: 1px solid #d5ddd7; border-radius: 8px; background: #fff; color: var(--ink); box-shadow: 0 8px 24px rgba(13,55,45,.16); font-weight: 400; }
+.adjusted-help-card > strong { display: block; color: var(--green); font-size: 13px; margin-bottom: 8px; }
+.adjusted-help-columns { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.adjusted-help-columns section > strong { display: block; color: #3f5c53; font-size: 12px; margin-bottom: 4px; }
+.adjusted-help-columns dl { margin: 0; }
+.adjusted-help-columns dl div { display: grid; gap: 2px; padding: 4px 0; border-top: 1px solid #edf0ed; }
+.adjusted-help-columns dt { font-size: 10px; line-height: 1.2; }
+.adjusted-help-columns dd { margin: 0; font-size: 11px; font-weight: 650; white-space: nowrap; }
+.adjusted-help-card > small { margin-top: 7px; font-size: 10px; }
+.comparison tbody th:has(.adjusted-help[open]) { position: relative; z-index: 30; }
 @media (max-width: 1100px) {
   .brand { gap: 16px; }
   .brand-values { display: none; }
@@ -99,7 +116,7 @@ button:focus-visible, .comparison-wrap:focus-visible { outline: 3px solid var(--
   .executive-footer p { margin: 0; }
 }
 
-/* S2 — alinhamento e uso da altura disponível; regras restritas à apresentação. */
+/* S3 — estrutura comum dos dois painéis; regras restritas à apresentação. */
 @media (min-width: 851px) {
   [data-testid="stMainBlockContainer"] { padding: .2rem .7rem .25rem; }
   [data-testid="stVerticalBlock"] { gap: .22rem; }
@@ -112,27 +129,27 @@ button:focus-visible, .comparison-wrap:focus-visible { outline: 3px solid var(--
   .brand-title p { font-size: clamp(12px, 1vw, 16px); }
   .brand-values { font-size: 10px; line-height: 1.55; }
   .brand-values::after { margin-top: 4px; }
-  .st-key-panel_previdenciario, .st-key-panel_financeiro { padding: 0 10px 8px; }
-  .plan-heading { min-height: 64px; padding: 8px 14px; gap: 12px; margin: 0 -10px 4px; }
+  .st-key-panel_previdenciario, .st-key-panel_financeiro { padding: 0; }
+  .plan-heading { height: 64px; min-height: 64px; padding: 8px 14px; gap: 12px; margin: 0; }
   .plan-heading svg { width: 35px; height: 35px; }
   .plan-heading h2 { font-size: clamp(20px, 2vw, 29px); }
   .plan-heading p { margin-top: 2px; font-size: 10px; }
-  .st-key-panel_previdenciario [data-testid="stHorizontalBlock"],
-  .st-key-panel_financeiro [data-testid="stHorizontalBlock"] { min-height: 56px; align-items: stretch; }
+  .st-key-panel_previdenciario [data-testid="stHorizontalBlock"]:has([data-testid="stTextInput"]),
+  .st-key-panel_financeiro [data-testid="stHorizontalBlock"]:has([data-testid="stTextInput"]) { align-items: stretch; margin: 5px 10px 0; width: calc(100% - 20px); }
   .st-key-panel_previdenciario [data-testid="stTextInput"],
-  .st-key-panel_financeiro [data-testid="stTextInput"] { height: 56px; padding: 2px 8px; }
+  .st-key-panel_financeiro [data-testid="stTextInput"] { height: auto; min-height: 58px; padding: 4px 8px; box-sizing: border-box; }
   .st-key-panel_previdenciario [data-testid="stTextInput"] label,
   .st-key-panel_financeiro [data-testid="stTextInput"] label { font-size: 13px; line-height: 1.15; }
   .st-key-panel_previdenciario [data-testid="stTextInput"] input,
   .st-key-panel_financeiro [data-testid="stTextInput"] input { font-size: 16px; height: 30px; }
   .st-key-panel_previdenciario .reference-rate,
-  .st-key-panel_financeiro .reference-rate { height: 52px; padding: 7px 6px; display: flex; flex-direction: column; justify-content: center; }
+  .st-key-panel_financeiro .reference-rate { height: 76px; min-height: 76px; padding: 7px 6px; display: flex; flex-direction: column; justify-content: center; box-sizing: border-box; }
   .reference-rate strong { font-size: 16px; }
   .comparison-wrap { padding-top: 3px; }
   [data-testid="stMarkdownContainer"] table.comparison th,
   [data-testid="stMarkdownContainer"] table.comparison td { padding: 5px 7px; line-height: 1.08; }
-  [data-testid="stMarkdownContainer"] .comparison.previdenciario tbody tr { height: 49px; }
-  [data-testid="stMarkdownContainer"] .comparison.financeiro tbody tr { height: 36px; }
+  [data-testid="stMarkdownContainer"] .comparison.previdenciario tbody tr { height: 46px; }
+  [data-testid="stMarkdownContainer"] .comparison.financeiro tbody tr { height: 46px; }
   .st-key-reset_area { padding: 3px 0 4px; }
   .st-key-reset_area [data-testid="stButton"] button { min-height: 40px; }
   .reset-note { font-size: 11px; padding-left: 16px; line-height: 1.2; }
@@ -141,23 +158,31 @@ button:focus-visible, .comparison-wrap:focus-visible { outline: 3px solid var(--
   .executive-footer .wordmark { font-size: 27px; }
   .executive-footer p { font-size: 11px; }
   .scope-note { font-size: 10px; margin: 2px 0; }
+  .adjusted-help[open] .adjusted-help-card { position: absolute; z-index: 40; top: -70px; left: 24px; }
 }
 
 @media (min-width: 851px) and (max-height: 820px) {
   .brand { min-height: 46px; }
   .institutional-logo { width: 48px; height: 48px; }
-  .plan-heading { min-height: 62px; padding-top: 6px; padding-bottom: 6px; }
+  .plan-heading { height: 60px; min-height: 60px; padding-top: 6px; padding-bottom: 6px; }
   .plan-heading svg { width: 31px; height: 31px; }
-  .st-key-panel_previdenciario [data-testid="stHorizontalBlock"],
-  .st-key-panel_financeiro [data-testid="stHorizontalBlock"],
   .st-key-panel_previdenciario [data-testid="stTextInput"],
-  .st-key-panel_financeiro [data-testid="stTextInput"] { min-height: 50px; height: 50px; }
+  .st-key-panel_financeiro [data-testid="stTextInput"] { min-height: 56px; height: auto; }
   .st-key-panel_previdenciario .reference-rate,
-  .st-key-panel_financeiro .reference-rate { height: 46px; }
+  .st-key-panel_financeiro .reference-rate { height: 76px; min-height: 76px; }
   [data-testid="stMarkdownContainer"] .comparison.previdenciario tbody tr { height: 44px; }
-  [data-testid="stMarkdownContainer"] .comparison.financeiro tbody tr { height: 32px; }
+  [data-testid="stMarkdownContainer"] .comparison.financeiro tbody tr { height: 44px; }
   .st-key-reset_area { padding-top: 1px; padding-bottom: 1px; }
   .executive-footer { padding-top: 3px; }
   .executive-footer .institutional-logo { width: 40px; height: 40px; }
   .scope-note { margin-top: 0; }
+}
+
+@media (max-width: 850px) {
+  .st-key-panel_previdenciario [data-testid="stHorizontalBlock"]:has([data-testid="stTextInput"]),
+  .st-key-panel_financeiro [data-testid="stHorizontalBlock"]:has([data-testid="stTextInput"]) { margin: 6px 10px 0; width: calc(100% - 20px); }
+  .comparison-wrap { margin-bottom: 9px; }
+  .adjusted-help-columns { grid-template-columns: 1fr; }
+  .adjusted-help-card { width: min(285px, calc(100vw - 76px)); }
+  .adjusted-help[open] .adjusted-help-card { position: static; }
 }

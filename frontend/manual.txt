@@ -22,7 +22,7 @@ Cada plano compara Indicador, DRAA 2026 (base fixa), Simulado e Variação. A ú
 
 Previdenciário: Ativos garantidores (BO5), Ativo atuarial (AR157), Passivo atuarial (BJ157) e Resultado (BO5 + AR157 − BJ157).
 
-Financeiro: Ativos garantidores (BO5), Ativo atuarial bruto (AR157), Exclusão atuarial (AQ157), Ativo atuarial ajustado (AR157 − AQ157), Passivo atuarial (BJ157) e Resultado (BO5 + AR157 − AQ157 − BJ157). A exclusão mostra o valor da rubrica, sem inversão de sinal decorativa.
+Financeiro: Ativos garantidores, Ativo atuarial ajustado (Ativo atuarial bruto menos a Exclusão Atuarial dos Aportes Insuficiência), Passivo atuarial e Resultado (Ativos garantidores + Ativo atuarial bruto − Exclusão Atuarial dos Aportes Insuficiência − Passivo atuarial). O ícone de ajuda ao lado do Ativo atuarial ajustado apresenta, separadamente para a referência DRAA 2026 e a simulação, o Ativo atuarial bruto, a Exclusão Atuarial dos Aportes Insuficiência e o Ativo atuarial ajustado.
 
 O botão Restaurar padrão fica abaixo dos dois painéis. Em telas menores, os planos são empilhados e a tabela pode ser rolada horizontalmente para preservar a leitura dos números completos.
 

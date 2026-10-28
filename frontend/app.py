@@ -52,7 +52,7 @@ def panel(plan, key):
     default = str(BASE_RATES[plan]).replace('.', ',')
     if key not in st.session_state:
         st.session_state[key] = default
-    field, reference = st.columns([1.7, 1], vertical_alignment='center')
+    field, reference = st.columns([1.7, 1], vertical_alignment='top')
     with field:
         raw = st.text_input(f'Taxa de juros — {plan} (% ao ano)', key=key,
                             help='De 0,00 a 20,00. Precisão de 0,01 ponto percentual. Confirme com Enter ou saia do campo.')

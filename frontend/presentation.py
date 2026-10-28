@@ -48,10 +48,30 @@ def metric_html(label: str, value: Decimal, base: Decimal, result=False) -> str:
 PLAN_METRICS = {
     'Previdenciário': (('guaranteed_assets', 'Ativos garantidores'), ('gross_assets', 'Ativo atuarial'),
                        ('liabilities', 'Passivo atuarial'), ('result', 'Resultado atuarial')),
-    'Financeiro': (('guaranteed_assets', 'Ativos garantidores'), ('gross_assets', 'Ativo atuarial bruto'),
-                   ('exclusion', '(−) Exclusão atuarial AQ157'), ('adjusted_assets', 'Ativo atuarial ajustado'),
+    'Financeiro': (('guaranteed_assets', 'Ativos garantidores'), ('adjusted_assets', 'Ativo atuarial ajustado'),
                    ('liabilities', 'Passivo atuarial'), ('result', 'Resultado atuarial')),
 }
+
+
+def adjusted_assets_help(simulated, baseline) -> str:
+    """Memória explicativa da apresentação; os valores vêm do motor certificado."""
+    def column(title, result):
+        return (
+            f'<section><strong>{title}</strong><dl>'
+            f'<div><dt>Ativo atuarial bruto</dt><dd>{currency(result.gross_assets)}</dd></div>'
+            '<div><dt>(−) Exclusão atuarial dos Aportes Insuficiência</dt>'
+            f'<dd>{currency(result.exclusion)}</dd></div>'
+            f'<div><dt>(=) Ativo atuarial ajustado</dt><dd>{currency(result.adjusted_assets)}</dd></div>'
+            '</dl></section>'
+        )
+
+    return (
+        '<details class="adjusted-help"><summary aria-label="Abrir composição do Ativo Atuarial Ajustado" '
+        'title="Ver composição do Ativo Atuarial Ajustado">?</summary>'
+        '<div class="adjusted-help-card"><strong>Composição do Ativo Atuarial Ajustado</strong>'
+        f'<div class="adjusted-help-columns">{column("DRAA 2026", baseline)}{column("Simulado", simulated)}</div>'
+        '<small>Acione novamente o ícone ? para fechar.</small></div></details>'
+    )
 
 
 def comparison_table(plan, simulated, baseline):
@@ -62,9 +82,13 @@ def comparison_table(plan, simulated, baseline):
         delta, pct = difference(value, base)
         result = attr == 'result'
         meaning = ('Déficit' if value < 0 else 'Superávit' if value > 0 else 'Equilíbrio') if result else ''
+        label_html = escape(label)
+        if plan == 'Financeiro' and attr == 'adjusted_assets':
+            label_html = f'<span>{label_html}</span>{adjusted_assets_help(simulated, baseline)}'
         rows.append(
             f'<tr class="{"result-row" if result else "indicator-row"}" data-indicator="{attr}">'
-            f'<th scope="row">{escape(label)}<small class="result-meaning">{meaning}</small></th>'
+            f'<th scope="row"><div class="indicator-label-line">{label_html}</div>'
+            f'<small class="result-meaning">{meaning}</small></th>'
             f'<td class="{"negative" if base < 0 else ""}">{currency(base)}</td>'
             f'<td class="{"negative" if value < 0 else ""}">{currency(value)}</td>'
             f'<td class="variation">{currency(delta)}<small>({percentage(pct)})</small></td></tr>'
